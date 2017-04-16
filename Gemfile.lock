@@ -39,14 +39,27 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    bcrypt (3.1.11)
     builder (3.2.3)
     byebug (9.0.6)
+    coderay (1.1.1)
     concurrent-ruby (1.0.5)
+    devise (4.2.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     erubis (2.7.0)
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
+    jsonapi-resources (0.9.0)
+      activerecord (>= 4.1)
+      concurrent-ruby
+      railties (>= 4.1)
+    jwt (1.5.6)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -63,6 +76,14 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    orm_adapter (0.5.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     puma (3.8.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -94,6 +115,9 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
+    slop (3.6.0)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -111,6 +135,8 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    warden (1.2.7)
+      rack (>= 1.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -119,8 +145,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
+  devise
+  jsonapi-resources
+  jwt
   listen (~> 3.0.5)
+  pry
+  pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.1)
   spring
