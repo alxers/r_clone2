@@ -5,9 +5,11 @@ module Api
 
       def create
         user = User.find_by(email: auth_params[:email])
-        return unless user && user.valid_password?(auth_params[:password])
-        jwt = JsonWebToken.encode(user: user.id)
-        render json: { auth_token: jwt }, status: :ok
+        if user && user.valid_password?(auth_params[:password])
+          render json: { auth_token: JsonWebToken.encode(user_id: user.id) }
+        else
+          render json: { errors: ['Invalid email or password'] }
+        end
       end
 
       private
