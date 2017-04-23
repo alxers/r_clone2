@@ -1,6 +1,6 @@
 module Api
   module V1
-    class TokensController < ApiResourceController
+    class TokensController < ApplicationController
       skip_before_action :authenticate_user!, raise: false
 
       def create
