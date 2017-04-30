@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :tokens, only: [:create]
       jsonapi_resources :users
       jsonapi_resources :reddits
+      jsonapi_resources :posts
+      jsonapi_resources :comments
     end
   end
 end
