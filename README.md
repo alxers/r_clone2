@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Given user is registered.
+Get token by sending a POST request to http://localhost:3000/api/v1/users
+With Content-Type application/vnd.api+json and Authorization Bearer your_token_here
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Update user
+{
+   "data": {
+		"type": "users",
+		"id": "2",
+       	"attributes": {
+        	"email": "test02@test.com",
+            "password": "123456"
+       }
+   }
+}
